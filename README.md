@@ -1,3 +1,7 @@
+# Goal of this script
+
+I made this script to learn a little bit of Python: basic data types(string, integer,...), conditional statements, loops, input/output.
+
 # What is it?
 
 It's a software/script that generates a random string of characters that serves as a strong password.
@@ -11,3 +15,12 @@ The most common passwords (basic alphanumeric) can be guessed in a matter of sec
 - Accessibility: Make your passwords secret and never let anyone have access to them.
 
 You can check if your password is strong enough on this [website](https://howsecureismypassword.net/).
+
+# How to use it
+
+```bash
+mkdir password-generator/
+git clone https://github.com/zakaria-me/password-generator password-generator/
+```
+
+Then follow the instructions prompted on your terminal.
