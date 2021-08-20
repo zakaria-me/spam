@@ -1,3 +1,7 @@
+# Goal of this script
+
+I made this script to learn a little bit of Python: basic data types(string, integer,...), conditional statements, loops, input/output.
+
 # What is it?
 
 It's a software/script that generates a random string of characters that serves as a strong password.
