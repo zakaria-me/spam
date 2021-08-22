@@ -32,4 +32,5 @@ def generate_password(character_set, password_length):
   return generated_password
 
 def print_password(character_set, password_length):
-  print(generate_password(character_set, password_length))
+  generated_password = generate_password(character_set, password_length)
+  return generated_password

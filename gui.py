@@ -1,9 +1,14 @@
 import tkinter as tk
-from tkinter.constants import DISABLED
 import generate_password as g_p
 
 def print_password():
-  g_p.print_password(character_set.get(), int(input_length.get()))
+  generated_password = g_p.print_password(character_set.get(), int(input_length.get()))
+  frame_print_password = tk.Frame(root, pady=20)
+  frame_print_password.pack()
+  label = tk.Label(frame_print_password, text="The password generated is: " + generated_password)
+  label.pack()
+  close_button = tk.Button(frame_print_password, text="Clear generated password", command=frame_print_password.destroy)
+  close_button.pack()
 
 root = tk.Tk()
 frame = tk.Frame(root)
