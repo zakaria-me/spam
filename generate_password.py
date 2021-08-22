@@ -30,5 +30,6 @@ def generate_password(character_set, password_length):
     generated_password += character_set[random_int]
   return generated_password
 
-print("Here is your generated password:")
-print(generate_password)
+def print_password():
+  print("Here is your generated password:")
+  print(generate_password)
