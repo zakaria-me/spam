@@ -28,9 +28,4 @@ def generate_password(character_set, password_length):
   for i in range(password_length):
     random_int = random.randint(0, len(character_set) -1)
     generated_password += character_set[random_int]
-  print("Here is your generated password:")
-  return generated_password
-
-def print_password(character_set, password_length):
-  generated_password = generate_password(character_set, password_length)
   return generated_password

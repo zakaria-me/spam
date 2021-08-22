@@ -2,7 +2,7 @@ import tkinter as tk
 import generate_password as g_p
 
 def print_password():
-  generated_password = g_p.print_password(character_set.get(), int(input_length.get()))
+  generated_password = g_p.generate_password(character_set.get(), int(input_length.get()))
   frame_print_password = tk.Frame(root, pady=20)
   frame_print_password.pack()
   label = tk.Label(frame_print_password, text="The password generated is: " + generated_password)
@@ -40,7 +40,6 @@ input_length.pack()
 # Button to validate
 generate_button = tk.Button(root, text="Generate password", command=print_password)
 generate_button.pack()
-# Make a new frame appear or add a frame down 
 
 # Launch the frame
 root.mainloop()
