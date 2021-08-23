@@ -2,6 +2,7 @@
 
 I made this script to learn a little bit of Python: basic data types(string, integer,...), conditional statements, loops, input/output.
 I also used the default GUI framework for Python: Tkinter.
+I also used some SQLite via the sqlite3 Python library.
 
 # What is it?
 
