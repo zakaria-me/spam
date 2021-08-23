@@ -1,11 +1,6 @@
 import string, random
 
 def set_characters_set(character_set_number):
-  # character_set_number = int(input("""What characters do you want in your password?
-  #1- Letters(lower and capital)
-  #2- Letters and digits
-  #3- Letters, digits and special characters
-  #-> """)) 
   if character_set_number == 1:
     all_characters = string.ascii_letters
   elif character_set_number == 2:
@@ -15,7 +10,6 @@ def set_characters_set(character_set_number):
   return all_characters
 
 def set_password_length(password_length):
-  # password_length= input("What length do you want your password to be? ")
   if int(password_length) < 8:
     print("ERROR: The length must be greater than 8")
     exit()

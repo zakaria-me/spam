@@ -1,4 +1,4 @@
-import generate_password as g_p
+import gui.gui as g
 
-g_p.print_password()
+g.gui_main()
 
