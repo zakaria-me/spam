@@ -1,11 +1,19 @@
 import sqlite3 as sql
 
+def connect():
+  connection = sql.connect('password_manager.db')
+  return connection
+
+def create_cursor(connection):
+  cursor = connection.cursor()
+  return cursor
+
 def submit(username, password):
   # Create database or connect to one
-  connection = sql.connect('password_manager.db')
+  connection = connect() 
   
   # Create cursor: it does stuff to the database
-  cursor = connection.cursor()
+  cursor = create_cursor(connection)
 
   # Insert into table
    

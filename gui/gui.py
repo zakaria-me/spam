@@ -2,7 +2,18 @@ import tkinter as tk
 import password_generator.generate_password as g_p
 import database.database as db
 
+def display_one_username_password(username, password):
+  new_label = tk.Label(display_frame, text=username + " " + password)
+  new_label.pack()
 
+
+def display_all_username_password():
+  connection = db.connect()
+  cursor = db.create_cursor(connection)
+  # Retrieve the username passwords
+  for row in cursor.execute("SELECT * FROM username_password"):
+    new_label = tk.Label(display_frame, text=row)
+    new_label.pack()
 
 def print_password():
   global password 
@@ -16,6 +27,7 @@ def print_password():
 
 def submit():
   db.submit(username.get(), password)
+  display_one_username_password(username.get(), password)
 
 def gui_main():
 
@@ -23,7 +35,7 @@ def gui_main():
   root = tk.Tk()
   frame = tk.Frame(root)
   frame.pack()
-  root.title("Password Generator")
+  root.title("Password Manager")
   
   # Character set Frame
   character_set_frame = tk.Frame(root, pady=20)
@@ -71,5 +83,14 @@ def gui_main():
   submit_button = tk.Button(submit_frame, text="Add record to Database", command=submit)
   submit_button.pack()
   
+  # Window to display username and password
+  global display_frame
+  display_frame = tk.Frame(root, pady=20)
+  display_frame.pack() 
+  #display_label = tk.Label(display_frame, text="Username to password records: ")
+  #display_label.pack()
+  display_all_username_password()
+
+
   # Launch the frame
   root.mainloop()
