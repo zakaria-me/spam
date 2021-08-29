@@ -3,7 +3,9 @@ import password_generator.generate_password as g_p
 import database.database as db
 
 def display_one_username_password(username, password):
-  new_label = tk.Label(display_frame, text=username + " " + password)
+  new_label = tk.Label(display_username_frame, text=username)
+  new_label.grid()
+  new_label = tk.Label(display_password_frame, text=password)
   new_label.grid()
 
 
@@ -12,7 +14,9 @@ def display_all_username_password():
   cursor = db.create_cursor(connection)
   # Retrieve the username passwords
   for row in cursor.execute("SELECT * FROM username_password"):
-    new_label = tk.Label(display_frame, text=row)
+    new_label = tk.Label(display_username_frame, text=row[0])
+    new_label.grid()
+    new_label = tk.Label(display_password_frame, text=row[1])
     new_label.grid()
 
 def print_password():
@@ -83,10 +87,20 @@ def gui_main():
   
   # Window to display username and password
   global display_frame
-  display_frame = tk.Frame(root, pady=20)
+  global display_username_frame
+  global display_password_frame
+  display_frame = tk.Frame(root, pady=20, padx=20)
   display_frame.grid(row=0, column=1) 
-  display_label = tk.Label(display_frame, text="Username to password records: ")
-  display_label.grid(row=0, column=0)
+  #display_label = tk.Label(display_frame, text="Username to password records: ")
+  #display_label.grid(row=0, column=0)
+  display_username_frame = tk.Frame(display_frame)
+  display_username_frame.grid(row=1, column=0)
+  display_password_frame = tk.Frame(display_frame)
+  display_password_frame.grid(row=1, column=1)
+  table_username_label = tk.Label(display_username_frame, text="Username", pady=10)
+  table_username_label.grid(row=0, column=0)
+  table_password_label = tk.Label(display_password_frame, text="Password", pady=10)
+  table_password_label.grid(row=0, column=0)
   display_all_username_password()
   
   # Launch the frame
