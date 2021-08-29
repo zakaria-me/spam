@@ -8,7 +8,7 @@ def create_cursor(connection):
   cursor = connection.cursor()
   return cursor
 
-def submit(username, password):
+def submit(username, password, url):
   # Create database or connect to one
   connection = connect() 
   
@@ -17,10 +17,11 @@ def submit(username, password):
 
   # Insert into table
    
-  cursor.execute("INSERT INTO username_password VALUES (:username, :password)",
+  cursor.execute("INSERT INTO username_password VALUES (:username, :password, :url)",
   {
     'username': username,
-    'password': password
+    'password': password,
+    'url': url
   }
   )
   
