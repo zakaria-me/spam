@@ -17,12 +17,8 @@ def submit(username, password, url):
 
   # Insert into table
    
-  cursor.execute("INSERT INTO username_password VALUES (:username, :password, :url)",
-  {
-    'username': username,
-    'password': password,
-    'url': url
-  }
+  cursor.execute("""INSERT INTO username_password VALUES (%s, %s, %s);""",
+    (username, password, url)
   )
   
 
