@@ -1,7 +1,7 @@
-import sqlite3 as sql
+import psycopg2 as psql
 
 def connect():
-  connection = sql.connect('password_manager.db')
+  connection = psql.connect("dbname=password_manager user=zakaria")
   return connection
 
 def create_cursor(connection):

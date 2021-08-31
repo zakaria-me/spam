@@ -14,7 +14,8 @@ def display_all_username_password():
   connection = db.connect()
   cursor = db.create_cursor(connection)
   # Retrieve the username passwords
-  for row in cursor.execute("SELECT * FROM username_password"):
+  cursor.execute("SELECT * FROM username_password")
+  for row in cursor:
     new_label = tk.Label(display_username_frame, text=row[0])
     new_label.grid()
     new_label = tk.Label(display_password_frame, text=row[1])
