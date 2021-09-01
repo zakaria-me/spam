@@ -18,7 +18,6 @@ def verify_key(password):
     key=password_key.read()
   key_of_provided_password= hashlib.pbkdf2_hmac('sha256', password.encode('utf-8'), salt, 100000)
   if key == key_of_provided_password:
-    # open gui
     return True
   else:
     return False
