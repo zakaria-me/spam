@@ -13,7 +13,6 @@ def generate_key(password):
 
 def verify_key(password):
   path = get_path()
-  print(password)
   with (open(path, mode="rb")) as password_key:
     salt = password_key.read(32)
     key=password_key.read()
@@ -27,3 +26,10 @@ def verify_key(password):
 def get_path():
   path = "password_generator/password_key.txt"
   return path
+
+def password_is_in_existence():
+  path = get_path()
+  if(os.path.isfile(path)):
+    return True
+  else:
+    return False
