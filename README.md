@@ -1,12 +1,13 @@
-# Goal of this script
+# Goal of this program
 
-I made this script to learn a little bit of Python: basic data types(string, integer,...), conditional statements, loops, input/output.
-I also used the default GUI framework for Python: Tkinter.
-I also used some SQLite via the sqlite3 Python library.
+I made this program to learn a little bit of Python: basic data types(string, integer,...), control structures(if, for), loops, input/output, packaging and imports,...
+I used the default GUI framework for Python: Tkinter for the interactive part.
+For the database I started with SQLite which is shipped with Python 3 then migrated to PostgreSQL as it offers more security features.
 
 # What is it?
 
-It's a software/script that generates a random string of characters that serves as a strong password.
+It's a software that generates a random string of characters that serves as a strong password.
+It also stores them.
 
 ## A strong password
 
@@ -18,11 +19,16 @@ The most common passwords (basic alphanumeric) can be guessed in a matter of sec
 
 You can check if your password is strong enough on this [website](https://howsecureismypassword.net/).
 
+# Dependencies
+
+You must have [Psycopg](https://www.psycopg.org/docs/index.html) installed.
+Everything else are native Python libraries.
+
 # How to use it
 
 ```bash
-mkdir password-generator/
 git clone https://github.com/zakaria-me/password-generator password-generator/
+python3 main.py
 ```
 
-Then follow the instructions prompted on your terminal.
+Then follow the instructions prompted on your screen.
