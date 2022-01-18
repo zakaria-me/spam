@@ -7,6 +7,7 @@ I used the default GUI framework for Python: Tkinter for the interactive part.
 For the database I started with SQLite which is shipped with Python 3 then migrated to PostgreSQL as it offers more security features.
 
 ![](ressources/SPAM-main_frame.png)
+
 _Don't worry these logins are not used... They are completely random_
 # What is it?
 
