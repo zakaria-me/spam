@@ -1,13 +1,25 @@
 # Goal of this program
 
 I made this program to learn a little bit of Python: basic data types(string, integer,...), control structures(if, for), loops, input/output, packaging and imports,...
+
 I used the default GUI framework for Python: Tkinter for the interactive part.
+
 For the database I started with SQLite which is shipped with Python 3 then migrated to PostgreSQL as it offers more security features.
+
+![](ressources/SPAM-main_frame.png)
 
 # What is it?
 
 It's a software that generates a random string of characters that serves as a strong password.
+
 It also stores them.
+
+# Features
+
+- Generate password using 3 characters sets: ASCII letters, ASCII Letters and digits, ASCII Letters and digits and special characters
+- Generate a password of arbitrary length, must be > 7
+- Save a url associated with the username/password pair
+- Protect the application with a master password
 
 ## A strong password
 
